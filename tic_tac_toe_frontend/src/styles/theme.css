@@ -1,0 +1,100 @@
+:root {
+  --primary: #2563EB;
+  --secondary: #F59E0B;
+  --success: #F59E0B;
+  --error: #EF4444;
+  --background: #f9fafb;
+  --surface: #ffffff;
+  --text: #111827;
+  --hover-opacity: 0.9;
+  --transition-speed: 0.3s;
+  --border-radius: 8px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.game-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--surface);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 2rem 0;
+}
+
+.square {
+  aspect-ratio: 1;
+  background: var(--surface);
+  border: 2px solid var(--primary);
+  border-radius: var(--border-radius);
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary);
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+}
+
+.square:hover {
+  background: rgba(37, 99, 235, 0.05);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.square.x {
+  color: var(--primary);
+}
+
+.square.o {
+  color: var(--secondary);
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+}
+
+.btn:hover {
+  opacity: var(--hover-opacity);
+  transform: translateY(-1px);
+}
+
+.btn.secondary {
+  background: var(--secondary);
+}
+
+.status {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text);
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.win {
+  color: var(--success);
+}
+
+.draw {
+  color: var(--secondary);
+}
